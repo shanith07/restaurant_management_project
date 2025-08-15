@@ -26,12 +26,12 @@ class ItemView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-def menu_list(request):
-    menu_items=[
-        {"name": "Pizza", "price":250},
-        {"name": "Veg Burger", "price":150},
-        {"name": "Chicken Biryani", "price":180},
-        {"name": "Pasta", "price":200}
-    ]
+    def menu_list(request):
+        menu_items=[
+            {"name": "Pizza", "price":250},
+            {"name": "Veg Burger", "price":150},
+            {"name": "Chicken Biryani", "price":180},
+            {"name": "Pasta", "price":200}
+        ]
 
-    return render(request, 'products/menu_list.html',{"menu_items": menu_items})
+        return render(request, 'products/menu_list.html',{"menu_items": menu_items})
